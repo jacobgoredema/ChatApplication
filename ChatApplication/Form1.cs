@@ -19,12 +19,13 @@ namespace ChatApplication
         ChatCoordinator chatCoordinator = ChatCoordinator.GetObject();
         private void frmChat_Load(object sender, EventArgs e)
         {
-            chatCoordinator.Register(ReceiveMessage);
+            //chatCoordinator.Register(ReceiveMessage);
+            chatCoordinator.ReceiveMessage += new MessageHandler(ReceiveMessage);
         }
 
         private void ReceiveMessage(string message)
         {
-            txtReceive.Text += message + "\n";
+            txtReceive.Text += message + Environment.NewLine;
         }
 
         private void btnBroadcast_Click(object sender, EventArgs e)

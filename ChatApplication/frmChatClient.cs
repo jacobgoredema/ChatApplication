@@ -22,5 +22,10 @@ namespace ChatApplication
             frmChat frmChat = new frmChat();
             frmChat.Show();
         }
+
+        private void frmChatClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

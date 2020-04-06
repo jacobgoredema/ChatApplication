@@ -50,6 +50,7 @@
             this.Name = "frmChatClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chat Client";
+            this.Load += new System.EventHandler(this.frmChatClient_Load);
             this.ResumeLayout(false);
 
         }

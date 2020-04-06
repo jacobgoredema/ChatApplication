@@ -9,20 +9,21 @@ namespace ChatApplication
     public delegate void MessageHandler(string message);
     public class ChatCoordinator
     {
-        List<MessageHandler> Handlers = new List<MessageHandler>();
-        public void Register(MessageHandler handler)
-        {
-            Handlers.Add(handler);
-        }
+        //List<MessageHandler> Handlers = new List<MessageHandler>();
+        public event MessageHandler ReceiveMessage;
+        //public void Register(MessageHandler handler)
+        //{
+        //    Handlers.Add(handler);
+        //}
         public void Broadcast(string message)
         {
-            foreach (MessageHandler handler in Handlers)
-            {
-                handler(message);
-            }
+            //foreach (MessageHandler handler in Handlers)
+            //    handler(message);
+            if (ReceiveMessage != null)
+                ReceiveMessage(message);
         }
 
-        //singleton class
+        //singleton class(only one instancecan be created
         private ChatCoordinator()
         {
 
